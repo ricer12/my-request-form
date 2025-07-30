@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>请示表单</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 { text-align: center; color: #333; }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea { height: 120px; resize: vertical; }
+        .date-group {
+            display: flex;
+            gap: 10px;
+        }
+        .date-group input { flex: 1; }
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>请示表单</h2>
+        <form id="requestForm">
+            <label>请示标题：</label>
+            <input type="text" name="title" required />
+
+            <label>请示部门：</label>
+            <input type="text" name="department" required />
+
+            <label>请示内容：</label>
+            <textarea name="content" required></textarea>
+
+            <label>时间：</label>
+            <div class="date-group">
+                <input type="text" name="year" placeholder="年" required />
+                <input type="text" name="month" placeholder="月" required />
+                <input type="text" name="day" placeholder="日" required />
+            </div>
+
+            <label>联系人：</label>
+            <input type="text" name="contact" required />
+
+            <label>联系电话：</label>
+            <input type="tel" name="phone" required />
+
+            <button type="submit">提交</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('requestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('提交成功！');
+        });
+    </script>
+</body>
+</html>
